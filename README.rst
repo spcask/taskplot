@@ -52,9 +52,9 @@ License
 -------
 This is free software. You are permitted to redistribute and use it in
 source and binary forms, with or without modification, under the terms
-of the Simplified BSD License. See the LICENSE.txt file for the complete
+of the Simplified BSD License. See the LICENSE.rst file for the complete
 license.
 
 This software is provided WITHOUT ANY WARRANTY; without even the implied
 warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-LICENSE.txt file for the complete disclaimer.
+LICENSE.rst file for the complete disclaimer.
