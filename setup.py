@@ -34,8 +34,8 @@ from distutils.core import setup
 import os
 from src import taskplot
 
-description = taskplot.__doc__.strip().split('\n', 1)[0]
-long_description = '\n\n'.join(open(f).read() for f in
+_description = taskplot.__doc__.strip().split('\n', 1)[0]
+_long_description = '\n\n'.join(open(f).read() for f in
                                ('README.rst', 'CHANGES.rst'))
 
 if os.name == 'nt':
@@ -45,11 +45,26 @@ else:
 
 setup(name='taskplot',
       version=taskplot.__version__,
+      description=_description,
+      long_description=_long_description,
       author='Susam Pal',
       author_email='susam@susam.in',
       url='https://github.com/susam/taskplot',
-      description=description,
-      long_description=long_description,
+      download_url='https://pypi.python.org/pypi/taskplot',
       py_modules=['taskplot'],
       scripts=scripts,
+      classifiers=[
+        'Development Status :: 4 - Beta',
+        'Environment :: Console',
+        'Intended Audience :: Developers',
+        'Intended Audience :: End Users/Desktop',
+        'License :: OSI Approved :: BSD License',
+        'Operating System :: OS Independent',
+        'Programming Language :: Python :: 3',
+        'Topic :: Software Development :: Libraries :: Python Modules',
+        'Topic :: Utilities'
+      ],
+      license='Simplified BSD License',
+      keywords=['task', 'effort', 'time', 'progress', 'graph', 'plot'],
+      platforms=['Any'],
       package_dir={'': 'src'})
