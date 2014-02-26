@@ -1,13 +1,11 @@
 TaskPlot - Plot your tasks
 ==========================
 
-TaskPlot is a command line tool as well as a Python library module that
-may be used from the command line or from another program to plot
-progress in multiple tasks in a single graph.
+TaskPlot is a Python module and command line tool based on in it that
+may be used to plot progress in multiple tasks in a single graph.
 
-.. sectnum::
 .. contents::
-   :backlinks: top
+   :backlinks: none
 
 Requirements
 ------------
@@ -151,7 +149,7 @@ Here is a list of useful links about this project.
 - `Latest release on PyPI <https://pypi.python.org/pypi/taskplot>`_
 - `Source code on GitHub <https://github.com/susam/taskplot>`_
 - `Issue tracker on GitHub <https://github.com/susam/taskplot/issues>`_
-- `Change Log on GitHub
+- `Changelog on GitHub
   <https://github.com/susam/taskplot/blob/master/CHANGES.rst>`_
 
 License
