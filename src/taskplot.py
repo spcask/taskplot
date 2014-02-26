@@ -144,7 +144,7 @@ effort versus time for the tasks.
 
 
 # Module attributes for pydoc
-__version__ = '0.1.1'
+__version__ = '0.1.2'
 __date__ = '21 February 2013'
 __author__ = 'Susam Pal <susam@susam.in>'
 __credits__ = ('Matplotlib development team for a wonderful '
