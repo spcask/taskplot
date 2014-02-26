@@ -20,7 +20,7 @@ may be used to install the required packages and execute the script::
 
     aptitude install python3-matplotlib
 
-This package uses the Matplotlib library to plot graphs. 
+This package uses the Matplotlib library to plot graphs.
 
 Installation
 ------------
@@ -39,6 +39,98 @@ following command::
 
 Note that on a Windows system, you may have to replace ``python3`` with
 the path to your Python 3 interpreter.
+
+Getting started
+---------------
+There are three ways to feed data to TaskPlot and let it plot graphs.
+
+1. Using a task directory containing task files: Let us assume your
+   current directory contains the following files and contents::
+
+    -- 2014-02-01.txt --
+    READING: [xx] [xx]
+    MUSIC: [xx] [xx]
+    READING: [x]
+
+    -- 2014-02-03.txt --
+    READING: [x]
+    CODING: [xx]
+
+    -- 2014-02-04.txt --
+    READING: [xx] [x]
+    MUSIC: [xx]
+
+    -- 2014-02-08.txt --
+    MUSIC: [xx]
+    CODING: [xx] [xx]
+
+    -- 2014-02-10.txt --
+    READING: [xx]
+    MUSIC: [xx]
+    READING: [xx]
+
+   Execute the following command in the current directory::
+
+    taskplot
+
+   The above command will plot a graph from those files and save it in
+   a file called taskplot.png
+
+   .. image:: http://i.imgur.com/AoAkGcK.png
+      :width: 640px
+
+
+2. Using a task list file: Let us assume your current directory contains
+   a file called tasklist.txt with the following content::
+
+    DATE        READING  MUSIC     CODING
+    2014-02-01  1.0      0.5       0.0
+    2014-02-03  0.5      0.0       1.0
+    2014-02-04  0.5      0.5       0.5
+    2014-02-05  0.5      0.0       0.5
+    2014-02-08  0.5      0.5       1.5
+
+    DATE        CHESS    MUSIC     CODING
+    2014-02-09  1.0      0.5       0.5
+    2014-02-10  1.5      1.0       0.5
+    2014-02-11  0.5      1.0       1.0
+    2014-02-12  2.0      0.5       0.0
+    2014-02-15  0.0      0.0       0.5
+
+   Execute the following command in the current directory::
+
+    taskplot tasklist.txt
+
+   The above command will plot a graph from those files and save it in
+   a file called taskplot.png
+
+   .. image:: http://i.imgur.com/Nk24ZOb.png
+      :width: 640px
+
+3. Using your own program: Here is an example program::
+
+    import taskplot
+    import datetime
+
+    taskplot = taskplot.TaskPlot()
+    taskplot.add_effort('READING', datetime.datetime(2014, 2, 1), 0.5)
+    taskplot.add_effort('READING', datetime.datetime(2014, 2, 5), 1.0)
+    taskplot.add_effort('READING', datetime.datetime(2014, 2, 8), 0.5)
+    taskplot.add_effort('READING', datetime.datetime(2014, 2, 12), 0.5)
+    taskplot.add_effort('CODING', datetime.datetime(2014, 2, 1), 1.0)
+    taskplot.add_effort('CODING', datetime.datetime(2014, 2, 3), 1.0)
+    taskplot.add_effort('CODING', datetime.datetime(2014, 2, 7), 1.0)
+    taskplot.add_effort('MUSIC', datetime.datetime(2014, 2, 9), 1.0)
+    taskplot.add_effort('MUSIC', datetime.datetime(2014, 2, 15), 1.0)
+    taskplot.print_summary()
+    taskplot.plot_graph()
+    taskplot.save_graph('taskplot.png')
+
+   Executing this program using Python 3 interpreter will plot a graph
+   and generate the following graph.
+
+   .. image:: http://i.imgur.com/oEby9Hf.png
+      :width: 640px
 
 Support
 -------

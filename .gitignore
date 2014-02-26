@@ -1,2 +1,6 @@
 *.sw?
+*.png
 __pycache__/
+/MANIFEST
+/dist/
+/build/
