@@ -35,8 +35,7 @@ import os
 from src import taskplot
 
 _description = taskplot.__doc__.strip().split('\n', 1)[0]
-_long_description = '\n\n'.join(open(f).read() for f in
-                               ('README.rst', 'CHANGES.rst'))
+_long_description = open('README.rst').read()
 
 if os.name == 'nt':
     scripts = ['scripts/taskplot.cmd']
