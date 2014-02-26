@@ -1,1 +1,10 @@
 include *.rst
+
+# The setup.py script is programmed to add either script/taskplot.cmd or
+# script/taskplot on Windows or Linux respectively. Without the line
+# below, when source distribution is created on Linux, only
+# script/taskplot is included in the source distribution. Therefore,
+# installation of the program on Windows fails due to missing
+# script/taskplot.cmd. Hence, include both script/taskplot.cmd and
+# script/taskplot in the source distribution.
+include scripts/*
