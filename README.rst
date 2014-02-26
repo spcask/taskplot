@@ -7,6 +7,7 @@ progress in multiple tasks in a single graph.
 
 .. sectnum::
 .. contents::
+   :backlinks: top
 
 Requirements
 ------------
