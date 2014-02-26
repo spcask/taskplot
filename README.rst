@@ -103,8 +103,8 @@ There are three ways to feed data to TaskPlot and let it plot graphs.
 
     taskplot tasklist.txt
 
-   The above command will plot a graph from those files and save it in
-   a file called taskplot.png
+   The above command will plot a graph from the data in the file and
+   save it in a file called taskplot.png
 
    .. image:: http://i.imgur.com/Nk24ZOb.png
       :width: 640px
@@ -137,10 +137,7 @@ There are three ways to feed data to TaskPlot and let it plot graphs.
 Support
 -------
 To report any bugs, or ask any question, please visit
-<https://github.com/susam/taskplot/issues>. Please search the existing
-issues to see if there is an existing issue for the bug you want to
-report or the question you want to ask. If it does not exist, then
-please create a new issue.
+<https://github.com/susam/taskplot/issues>.
 
 Resources
 ---------
