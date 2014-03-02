@@ -1,6 +1,8 @@
 language: python
 python:
     - "3.3"
+install:
+    - pip install matplotlib
 script:
     - python setup.py install
     - python setup.py sdist
