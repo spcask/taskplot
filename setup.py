@@ -66,4 +66,5 @@ setup(name='taskplot',
       license='Simplified BSD License',
       keywords=['task', 'effort', 'time', 'progress', 'graph', 'plot'],
       platforms=['Any'],
-      package_dir={'': 'src'})
+      package_dir={'': 'src'},
+      requires=['matplotlib'])
