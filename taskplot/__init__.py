@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 # Copyright (c) 2014 Susam Pal
 # All rights reserved.
 #
@@ -27,43 +25,15 @@
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
-"""TaskPlot setup script."""
+"""Susam's taskplot package to plot effort versus time for multiple tasks.
+
+Modules:
+taskplot.taskplot -- Plot effort versus time for multiple tasks.
+"""
 
 
-from distutils.core import setup
-import os
-from src import taskplot
-
-_description = taskplot.__doc__.strip().split('\n', 1)[0]
-_long_description = open('README.rst').read()
-
-if os.name == 'nt':
-    scripts = ['bin/taskplot.cmd']
-else:
-    scripts = ['bin/taskplot']
-
-setup(name='taskplot',
-      version=taskplot.__version__,
-      description=_description,
-      long_description=_long_description,
-      author='Susam Pal',
-      author_email='susam@susam.in',
-      url='https://github.com/susam/taskplot',
-      download_url='https://pypi.python.org/pypi/taskplot',
-      packages=['taskplot']
-      scripts=scripts,
-      classifiers=[
-        'Development Status :: 4 - Beta',
-        'Environment :: Console',
-        'Intended Audience :: Developers',
-        'Intended Audience :: End Users/Desktop',
-        'License :: OSI Approved :: BSD License',
-        'Operating System :: OS Independent',
-        'Programming Language :: Python :: 3',
-        'Topic :: Software Development :: Libraries :: Python Modules',
-        'Topic :: Utilities'
-      ],
-      license='Simplified BSD License',
-      keywords=['task', 'effort', 'time', 'progress', 'graph', 'plot'],
-      platforms=['Any'],
-      requires=['matplotlib'])
+__version__ = '0.1.2'
+__date__ = '21 February 2013'
+__author__ = 'Susam Pal <susam@susam.in>'
+__credits__ = ('Matplotlib development team for a wonderful '
+               'plotting library.')

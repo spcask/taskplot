@@ -119,17 +119,19 @@ or the CLI application).
      this module. Here is an example of a simple program using the
      TaskPlot class.
 
-        import taskplot
         import datetime
+        from taskplot import taskplot
 
         taskplot = taskplot.TaskPlot()
-        taskplot.add_effort('GYM', datetime.datetime(2014, 1, 1), 0.5)
-        taskplot.add_effort('GYM', datetime.datetime(2014, 1, 2), 0.5)
-        taskplot.add_effort('GYM', datetime.datetime(2014, 1, 3), 1.0)
-        taskplot.add_effort('WORK', datetime.datetime(2014, 1, 2), 5.0)
-        taskplot.add_effort('WORK', datetime.datetime(2014, 1, 3), 6.0)
-        taskplot.add_effort('WORK', datetime.datetime(2014, 1, 3), 1.0)
-
+        taskplot.add_effort('READING', datetime.datetime(2014, 2, 1), 0.5)
+        taskplot.add_effort('READING', datetime.datetime(2014, 2, 5), 1.0)
+        taskplot.add_effort('READING', datetime.datetime(2014, 2, 8), 0.5)
+        taskplot.add_effort('READING', datetime.datetime(2014, 2, 12), 0.5)
+        taskplot.add_effort('CODING', datetime.datetime(2014, 2, 1), 1.0)
+        taskplot.add_effort('CODING', datetime.datetime(2014, 2, 3), 1.0)
+        taskplot.add_effort('CODING', datetime.datetime(2014, 2, 7), 1.0)
+        taskplot.add_effort('MUSIC', datetime.datetime(2014, 2, 9), 1.0)
+        taskplot.add_effort('MUSIC', datetime.datetime(2014, 2, 15), 1.0)
         taskplot.print_summary()
         taskplot.plot_graph()
         taskplot.save_graph('taskplot.png')
@@ -141,14 +143,6 @@ Once the data is fed into the program, it can be used to show a
 summary of the tasks on the standard output as well as a plot a graph of
 effort versus time for the tasks.
 """
-
-
-# Module attributes for pydoc
-__version__ = '0.1.2'
-__date__ = '21 February 2013'
-__author__ = 'Susam Pal <susam@susam.in>'
-__credits__ = ('Matplotlib development team for a wonderful '
-               'plotting library.')
 
 
 import os
@@ -164,9 +158,11 @@ from matplotlib import dates
 from matplotlib import pyplot
 from dateutil import rrule
 
+import taskplot
+
 
 # Module attributes for CLI
-_prog = os.path.basename(sys.argv[0]).split('.', 1)[0]
+_prog = 'taskplot'
 _copyright = 'Copyright (c) 2014 Susam Pal'
 _license = (
     'This is free software. You are permitted to redistribute and use it in\n'
@@ -761,7 +757,15 @@ def _get_month_end_date(date):
 # CLI code below this line #
 # ------------------------ #
 def cli():
-    """Run taskplot command line interface.
+    """Run the taskplot command line interface."""
+    try:
+        _cli()
+    except (FileNotFoundError, ValueError) as e:
+        print('{}: {}'.format(e.__class__.__name__, e))
+
+
+def _cli():
+    """Implement the taskplot command line interface.
 
     Exceptions:
     FileNotFoundError -- If the there is no file or directory at the
@@ -930,16 +934,11 @@ def _parse_configuration():
 
 def _show_version():
     """Show version information."""
-    print(_prog, __version__)
+    print(taskplot.__file__)
+    print(sys.argv)
+    print(_prog, taskplot.__version__)
     print(_copyright)
     print()
     print(_license)
     print()
-    print('Written by', __author__ + '.')
-
-
-if __name__ == '__main__':
-    try:
-        cli()
-    except (FileNotFoundError, ValueError) as e:
-        print('{}: {}'.format(e.__class__.__name__, e))
+    print('Written by', taskplot.__author__ + '.')

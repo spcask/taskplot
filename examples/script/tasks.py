@@ -1,5 +1,5 @@
-import taskplot
 import datetime
+from taskplot import taskplot
 
 taskplot = taskplot.TaskPlot()
 taskplot.add_effort('READING', datetime.datetime(2014, 2, 1), 0.5)

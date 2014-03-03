@@ -111,8 +111,8 @@ There are three ways to feed data to TaskPlot and let it plot graphs.
 
 3. Using your own program: Here is an example program::
 
-    import taskplot
     import datetime
+    from taskplot import taskplot
 
     taskplot = taskplot.TaskPlot()
     taskplot.add_effort('READING', datetime.datetime(2014, 2, 1), 0.5)
