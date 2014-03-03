@@ -1,5 +1,6 @@
 *.sw?
 *.png
+/install.txt
 __pycache__/
 /MANIFEST
 /dist/
