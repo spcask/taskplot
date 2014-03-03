@@ -32,7 +32,7 @@
 
 from distutils.core import setup
 import os
-from src import taskplot
+import taskplot
 
 _description = taskplot.__doc__.strip().split('\n', 1)[0]
 _long_description = open('README.rst').read()
@@ -50,7 +50,7 @@ setup(name='taskplot',
       author_email='susam@susam.in',
       url='https://github.com/susam/taskplot',
       download_url='https://pypi.python.org/pypi/taskplot',
-      packages=['taskplot']
+      packages=['taskplot'],
       scripts=scripts,
       classifiers=[
         'Development Status :: 4 - Beta',
