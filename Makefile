@@ -8,7 +8,7 @@ build:
 	$(PYTHON) setup.py build
 
 install:
-	$(PYTHON) setup.py install
+	$(PYTHON) setup.py install --record install.txt
 
 test-release:
 	$(PYTHON) setup.py register -r https://testpypi.python.org/pypi
