@@ -4,5 +4,8 @@ python:
 install:
     - pip install matplotlib
 script:
+    - python -m unittest
     - python setup.py install
     - python setup.py sdist
+	- python setup.py register -r https://testpypi.python.org/pypi
+	- python setup.py sdist upload -r https://testpypi.python.org/pypi

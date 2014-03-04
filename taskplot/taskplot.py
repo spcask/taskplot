@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 # Copyright (c) 2014 Susam Pal
 # All rights reserved.
 #
@@ -655,6 +653,9 @@ class TaskPlot:
         task_names -- Name of the tasks (type: list)
 
         Return: Total effort (type: float)
+
+        Raise:
+        KeyError -- If a specified task name does not exist in task data
         """
         if task_names is None:
             task_names = self.get_sorted_task_names()
@@ -674,7 +675,7 @@ class TaskPlot:
         min_dates = set()
         for task_name in self.get_sorted_task_names():
             min_dates.add(self._tasks[task_name].get_min_date())
-        return min(min_dates)
+        return min(min_dates) if min_dates else None
 
     def get_max_date(self):
         """Return last date of effort.
@@ -687,7 +688,7 @@ class TaskPlot:
         max_dates = set()
         for task_name in self.get_sorted_task_names():
             max_dates.add(self._tasks[task_name].get_max_date())
-        return max(max_dates)
+        return max(max_dates) if max_dates else None
 
     def get_sorted_task_names(self):
         """Return a sorted list of all task names.
@@ -767,7 +768,7 @@ def cli():
 def _cli():
     """Implement the taskplot command line interface.
 
-    Exceptions:
+    Raise:
     FileNotFoundError -- If the there is no file or directory at the
                          path specified for the --path command line
                          argument
@@ -885,7 +886,7 @@ def _validate_arguments(parser, args):
     parser --  argument parser (type: argparse.ArgumentParser)
     args -- arguments (type: argparse.Namespace)
 
-    Exception:
+    Raise:
     ValueError -- If the times in args.data, args.summary or args.graph
                   are not in yyyy-mm-dd format
     """
@@ -900,7 +901,7 @@ def _parse_dates(dates, datefmt='%Y-%m-%d'):
     Arguments:
     dates -- A list of date strings (type: list)
 
-    Exceptions:
+    Raise:
     ValueError -- If a date is not in yyyy-mm-dd format
     """
     if dates is None:
