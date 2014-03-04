@@ -33,7 +33,7 @@ taskplot.taskplot -- Plot effort versus time for multiple tasks.
 
 
 __version__ = '0.1.2'
-__date__ = '21 February 2013'
+__date__ = '21 February 2014'
 __author__ = 'Susam Pal <susam@susam.in>'
 __credits__ = ('Matplotlib development team for a wonderful '
                'plotting library.')
