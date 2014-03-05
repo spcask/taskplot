@@ -5,8 +5,9 @@ install:
     - pip install matplotlib coveralls
 script:
     - python -m unittest -v
+    - coverage run --source=taskplot --branch runtests.py
+    - coverage report
     - python setup.py install
     - python setup.py sdist
-    - coverage run --source=taskplot --branch runtests.py
 after_success:
-    - coveralls
+    - coveralls -v
