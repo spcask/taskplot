@@ -1,5 +1,6 @@
 *.sw?
 *.png
+/.coverage
 /install.txt
 __pycache__/
 /MANIFEST
