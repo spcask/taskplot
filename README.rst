@@ -4,6 +4,12 @@ TaskPlot - Plot your tasks
 TaskPlot is a Python module and command line tool based on in it that
 may be used to plot progress in multiple tasks in a single graph.
 
+.. image:: https://travis-ci.org/susam/taskplot.png?branch=master
+   :target: https://travis-ci.org/susam/taskplot
+
+.. image:: https://coveralls.io/repos/susam/taskplot/badge.png?branch=master
+   :target: https://coveralls.io/r/susam/taskplot?branch=master
+
 .. contents::
    :backlinks: none
 
