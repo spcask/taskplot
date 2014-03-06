@@ -19,4 +19,7 @@ release:
 	$(PYTHON) setup.py sdist upload
 
 clean:
-	rm -rf build dist MANIFEST
+	rm -rf build dist MANIFEST install.txt
+	rm -rf .coverage htmlcov
+	rm -rf *.png
+	find . -name "__pycache__" -exec rm -r {} +
